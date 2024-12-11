@@ -8,7 +8,7 @@
 import SwiftUI
 import FirebaseAuth
 
-class AuthModel: ObservableObject {
+public class AuthModel: ObservableObject {
     @Published var isAuthenticated = false
     var service: Auth
     var handle: NSObjectProtocol?
