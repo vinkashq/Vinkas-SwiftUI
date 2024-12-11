@@ -25,6 +25,7 @@ let package = Package(
             name: "VinkasCore",
             dependencies: [
                 .product(name: "FirebaseAuth", package: "firebase-ios-sdk"),
+                .product(name: "FirebaseAnalytics", package: "firebase-ios-sdk"),
                 .product(name: "FirebaseAppCheck", package: "firebase-ios-sdk")
             ]
         ),

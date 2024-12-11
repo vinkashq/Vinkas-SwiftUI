@@ -8,17 +8,22 @@
 import SwiftUI
 import FirebaseCore
 import FirebaseAppCheck
+import FirebaseAnalytics
 
 #if os(iOS)
 public class VinkasAppDelegate: NSObject, UIApplicationDelegate {
-  public func application(_ application: UIApplication,
+    public func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    let providerFactory = VinkasAppCheckProviderFactory()
-    AppCheck.setAppCheckProviderFactory(providerFactory)
+        let providerFactory = VinkasAppCheckProviderFactory()
+        AppCheck.setAppCheckProviderFactory(providerFactory)
 
-    FirebaseApp.configure()
+        FirebaseApp.configure()
+        self.onFirebaseAppConfigurationComplete()
+        Analytics.logEvent("app_launch", parameters: nil)
 
-    return true
-  }
+        return true
+    }
+
+    public func onFirebaseAppConfigurationComplete() {}
 }
 #endif
