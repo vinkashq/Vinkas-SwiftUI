@@ -8,22 +8,22 @@
 import SwiftUI
 import FirebaseAuth
 
-public class AuthModel: ObservableObject {
-    @Published var isAuthenticated = false
-    var service: Auth
+public class VinkasAuthModel: ObservableObject {
+    @Published public var isAuthenticated = false
+    public var service: Auth
     var handle: NSObjectProtocol?
 
-    init() {
+    public init() {
         service = Auth.auth()
     }
 
-    func onAppear() {
+    public func onAppear() {
         handle = service.addStateDidChangeListener { [weak self] (auth, user) in
             self?.isAuthenticated = user != nil
         }
     }
 
-    func onDisappear() {
+    public func onDisappear() {
         service.removeStateDidChangeListener(handle!)
     }
 }
