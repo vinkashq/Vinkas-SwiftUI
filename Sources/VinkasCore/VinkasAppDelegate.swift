@@ -24,6 +24,6 @@ open class VinkasAppDelegate: NSObject, UIApplicationDelegate {
         return true
     }
 
-    public func onFirebaseAppConfigurationComplete() {}
+    open func onFirebaseAppConfigurationComplete() {}
 }
 #endif
