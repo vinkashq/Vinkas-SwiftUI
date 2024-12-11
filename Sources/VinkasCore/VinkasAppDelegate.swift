@@ -11,7 +11,7 @@ import FirebaseAppCheck
 
 #if os(iOS)
 public class VinkasAppDelegate: NSObject, UIApplicationDelegate {
-  func application(_ application: UIApplication,
+  public func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     let providerFactory = VinkasAppCheckProviderFactory()
     AppCheck.setAppCheckProviderFactory(providerFactory)
