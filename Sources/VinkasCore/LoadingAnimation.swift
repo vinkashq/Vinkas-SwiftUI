@@ -8,6 +8,8 @@
 import SwiftUI
 
 public struct LoadingAnimation: View {
+    public init() {}
+
     public var body: some View {
         Circle()
             .trim(from: 0.5, to: 1.0)
