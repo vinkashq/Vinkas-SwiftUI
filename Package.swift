@@ -8,9 +8,8 @@ let package = Package(
     platforms: [.iOS(.v13), .macOS(.v11)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "VinkasCore",
-            targets: ["VinkasCore"]),
+        .library(name: "VinkasCore", targets: ["VinkasCore"]),
+        .library(name: "VinkasUI", targets: ["VinkasUI"])
     ],
     dependencies: [
         .package(
@@ -32,6 +31,14 @@ let package = Package(
         .testTarget(
             name: "VinkasCoreTests",
             dependencies: ["VinkasCore"]
+        ),
+
+        .target(
+            name: "VinkasUI"
+        ),
+        .testTarget(
+            name: "VinkasUITests",
+            dependencies: ["VinkasUI"]
         ),
     ]
 )
