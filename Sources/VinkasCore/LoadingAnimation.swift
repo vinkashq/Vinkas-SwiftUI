@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct LoadingAnimation: View {
-    var body: some View {
+public struct LoadingAnimation: View {
+    public var body: some View {
         Circle()
             .trim(from: 0.5, to: 1.0)
             .stroke(style: StrokeStyle(lineWidth: 2))
