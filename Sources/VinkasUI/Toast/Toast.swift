@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Toast: Equatable {
+public struct Toast: Equatable {
     var type: ToastType
     var text: String
     var duration: Double = 3.0
