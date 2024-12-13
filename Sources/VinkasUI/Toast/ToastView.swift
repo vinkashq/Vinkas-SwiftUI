@@ -19,6 +19,7 @@ struct ToastView: View {
               Text(self.toast.text)
                   .font(Font.caption)
           }
+          .background(Color(UIColor.systemBackground))
           .padding(8)
           .frame(minWidth: 0, maxWidth: CGFloat.infinity)
           .cornerRadius(8)
