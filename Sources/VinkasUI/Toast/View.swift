@@ -9,7 +9,7 @@ import SwiftUI
 
 extension View {
 
-  func toaster(toast: Binding<Toast?>) -> some View {
+  public func toaster(toast: Binding<Toast?>) -> some View {
     self.modifier(ToastViewModifier(toast: toast))
   }
 }

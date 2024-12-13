@@ -8,7 +8,7 @@
 import SwiftUI
 
 public struct Toast: Equatable {
-    public init(type: ToastType, text: String, duration: Double) {
+    public init(type: ToastType, text: String, duration: Double = 3.0) {
         self.type = type
         self.text = text
         self.duration = duration
@@ -16,5 +16,5 @@ public struct Toast: Equatable {
 
     public var type: ToastType
     public var text: String
-    public var duration: Double = 3.0
+    public var duration: Double
 }
