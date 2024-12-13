@@ -19,9 +19,9 @@ struct ToastView: View {
               Text(self.toast.text)
                   .font(Font.caption)
           }
-          .background(Color(UIColor.systemBackground))
-          .padding(8)
           .frame(minWidth: 0, maxWidth: CGFloat.infinity)
+          .padding(8)
+          .background(Color(UIColor.systemBackground))
           .cornerRadius(8)
           .overlay(
               RoundedRectangle(cornerRadius: 8)
@@ -33,6 +33,9 @@ struct ToastView: View {
 }
 
 #Preview {
-    ToastView(toast: .init(type: .success, text: "Your request was successful"))
-    ToastView(toast: .init(type: .error, text: "There was an error processing your request"))
+    VStack {
+        ToastView(toast: .init(type: .success, text: "Your request was successful"))
+        ToastView(toast: .init(type: .error, text: "There was an error processing your request"))
+    }
+    .background(Color.accentColor)
 }
