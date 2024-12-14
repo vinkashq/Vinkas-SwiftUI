@@ -14,8 +14,12 @@ import FirebaseAnalytics
 open class VinkasAppDelegate: NSObject, UIApplicationDelegate {
     public func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        let providerFactory = VinkasAppCheckProviderFactory()
-        AppCheck.setAppCheckProviderFactory(providerFactory)
+        
+        #if DEBUG
+            AppCheck.setAppCheckProviderFactory(AppCheckDebugProviderFactory())
+        #else
+            AppCheck.setAppCheckProviderFactory(VinkasAppCheckProviderFactory())
+        #endif
 
         FirebaseApp.configure()
         self.onFirebaseAppConfigurationComplete()
