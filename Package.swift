@@ -9,6 +9,7 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(name: "VinkasCore", targets: ["VinkasCore"]),
+        .library(name: "VinkasFirebase", targets: ["VinkasFirebase"]),
         .library(name: "VinkasUI", targets: ["VinkasUI"])
     ],
     dependencies: [
@@ -21,7 +22,15 @@ let package = Package(
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "VinkasCore",
+            name: "VinkasCore"
+        ),
+        .testTarget(
+            name: "VinkasCoreTests",
+            dependencies: ["VinkasCore"]
+        ),
+        
+        .target(
+            name: "VinkasFirebase",
             dependencies: [
                 .product(name: "FirebaseAuth", package: "firebase-ios-sdk"),
                 .product(name: "FirebaseAnalytics", package: "firebase-ios-sdk"),
@@ -29,8 +38,8 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: "VinkasCoreTests",
-            dependencies: ["VinkasCore"]
+            name: "VinkasFirebaseTests",
+            dependencies: ["VinkasFirebase"]
         ),
 
         .target(

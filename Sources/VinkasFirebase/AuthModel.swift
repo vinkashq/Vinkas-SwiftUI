@@ -5,10 +5,9 @@
 //  Created by Vinkas on 11/12/24.
 //
 
-import SwiftUI
 import FirebaseAuth
 
-public class VinkasAuthModel: ObservableObject {
+public class AuthModel: ObservableObject {
     @Published public var isAuthenticated = false
     public var service: Auth
     var handle: NSObjectProtocol?
