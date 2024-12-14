@@ -7,11 +7,14 @@
 
 import SwiftUI
 
-struct ToastView: View {
-  
+public struct ToastView: View {
   var toast: Toast
+    
+  public init(toast: Toast) {
+      self.toast = toast
+  }
 
-  var body: some View {
+  public var body: some View {
       GeometryReader { geometry in
           HStack(spacing: 8) {
               Image(systemName: self.toast.type.icon)
