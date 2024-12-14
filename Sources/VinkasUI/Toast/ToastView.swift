@@ -17,7 +17,7 @@ struct ToastView: View {
               Image(systemName: self.toast.type.icon)
                   .foregroundColor(self.toast.type.color)
               Text(self.toast.text)
-                  .font(Font.caption)
+                  .font(Font.callout)
           }
           .frame(minWidth: 0, maxWidth: CGFloat.infinity)
           .padding(8)
