@@ -8,7 +8,7 @@ let package = Package(
     platforms: [.iOS(.v14), .macOS(.v11)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(name: "VinkasCore", targets: ["VinkasCore"]),
+        .library(name: "Vinkas", targets: ["Vinkas"]),
         .library(name: "VinkasFirebase", targets: ["VinkasFirebase"]),
         .library(name: "VinkasUI", targets: ["VinkasUI"])
     ],
@@ -23,15 +23,15 @@ let package = Package(
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "VinkasCore",
+            name: "Vinkas",
             dependencies: [
                 "VinkasFirebase",
                 .product(name: "SentrySwiftUI", package: "sentry-cocoa"),
             ]
         ),
         .testTarget(
-            name: "VinkasCoreTests",
-            dependencies: ["VinkasCore"]
+            name: "VinkasTests",
+            dependencies: ["Vinkas"]
         ),
         
         .target(
