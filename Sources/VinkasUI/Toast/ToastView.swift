@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+#if os(iOS)
+import UIKit
+#endif
 
 public struct ToastView: View {
   var toast: Toast
@@ -24,7 +27,9 @@ public struct ToastView: View {
           }
           .frame(minWidth: 0, maxWidth: CGFloat.infinity)
           .padding(8)
+#if os(iOS)
           .background(Color(UIColor.systemBackground))
+#endif
           .cornerRadius(8)
           .overlay(
               RoundedRectangle(cornerRadius: 8)
