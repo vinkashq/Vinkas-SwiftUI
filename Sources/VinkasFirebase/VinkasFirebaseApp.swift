@@ -10,6 +10,9 @@ import FirebaseCore
 import FirebaseAppCheck
 
 open class VinkasFirebaseApp {
+    public init() {
+        
+    }
     
     open func configureFirebase() {
         #if DEBUG

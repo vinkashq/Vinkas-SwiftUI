@@ -10,6 +10,10 @@ import VinkasFirebase
 import Sentry
 
 open class VinkasApp: VinkasFirebaseApp {
+    public override init() {
+        super.init()
+    }
+
     open func configure() {
         self.configureSentry()
         self.configureFirebase()
