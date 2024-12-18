@@ -9,7 +9,7 @@ import FirebaseAnalytics
 import FirebaseCore
 import FirebaseAppCheck
 
-open class VinkasFirebaseApp {
+open class VinkasFirebase {
     public init() {
         
     }
