@@ -17,12 +17,17 @@ let package = Package(
             url: "https://github.com/firebase/firebase-ios-sdk",
             .upToNextMajor(from: "11.6.0")
         ),
+        .package(url: "https://github.com/getsentry/sentry-cocoa", from: "8.42.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "VinkasCore"
+            name: "VinkasCore",
+            dependencies: [
+                "VinkasFirebase",
+                .product(name: "SentrySwiftUI", package: "sentry-cocoa"),
+            ]
         ),
         .testTarget(
             name: "VinkasCoreTests",

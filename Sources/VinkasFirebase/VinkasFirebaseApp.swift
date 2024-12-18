@@ -5,12 +5,13 @@
 //  Created by Vinkas on 14/12/24.
 //
 
+import FirebaseAnalytics
 import FirebaseCore
 import FirebaseAppCheck
 
-public class VinkasFirebase {
+open class VinkasFirebaseApp {
     
-    public static func configure() {
+    open func configureFirebase() {
         #if DEBUG
             AppCheck.setAppCheckProviderFactory(AppCheckDebugProviderFactory())
         #else
@@ -18,6 +19,10 @@ public class VinkasFirebase {
         #endif
 
         FirebaseApp.configure()
+        self.onFirebaseConfigurationComplete()
+        Analytics.logEvent("app_launch", parameters: nil)
     }
+    
+    open func onFirebaseConfigurationComplete() {}
     
 }
