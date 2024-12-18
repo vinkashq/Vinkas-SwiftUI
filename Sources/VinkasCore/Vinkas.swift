@@ -9,7 +9,7 @@ import SwiftUI
 import VinkasFirebase
 import Sentry
 
-open class Vinkas: VinkasFirebase {
+open class Vinkas: VinkasFirebase, @unchecked Sendable {
     public override init() {
         super.init()
     }
